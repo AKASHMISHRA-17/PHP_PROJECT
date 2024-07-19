@@ -5,7 +5,8 @@ if(isset($_POST["registerbtn"]))
     $fname=$_POST["fd"];
     $lstname=$_POST["ld"];
     $email=$_POST["ud"];
-    $password=$_POST["pd"];
+    //$password=$_POST["pd"];
+    echo $password = md5($_POST["pd"]);
     $sql = "INSERT INTO loginpage (first_name,last_name,username,password)VALUES ('$fname', '$lstname', '$email','$password')";
     if (mysqli_query($conn, $sql))
      {
