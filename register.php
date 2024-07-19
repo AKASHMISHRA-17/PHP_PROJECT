@@ -13,9 +13,11 @@ if(isset($_POST["registerbtn"]))
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-
+    mysqli_close($conn);
+    header('Location: http://akash2.local/task-3/login.php');
+    exit();
 }
-mysqli_close($conn);
+
 ?>
 
 <!DOCTYPE html>
