@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>LOGIN</title>
 </head>
 <body>
-    <h1>Login Page</h1>
-    <form>
-        username:
-        <input type="text" id="udata">
-        <br>
-        <br>
-        Password:
-        <input type="text"id="pd">
-        <br>
-        <br>
-        <input type="submit"id="loginbtn"value="Login">
-        <button><a href="http://akash2.local/task-3/register.php" target="_blank">Register</a></button>
-</form>
+    <form action="sessionconnection.php" method="post">
+        <h2>LOGIN</h2>
+        <?php if (isset($_GET['error'])) { ?>
+            <p class="error"><?php echo $_GET['error']; ?></p>
+        <?php } ?>
+        <label>User Name</label>
+        <input type="text" name="uname" placeholder="User Name"><br>
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Password"><br>
+        <button type="submit">Login</button>
+        <button><a href="http://akash2.local/task-3/register.php">signup</a></button>
+    </form>
 </body>
 </html>
